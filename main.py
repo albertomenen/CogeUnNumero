@@ -1,36 +1,55 @@
 #Number Guessing Game Objectives:
 
-from random import random
 
-numero_jugador = input("Que numero eliges?")
+##Escoger un numero random desde el 1 al 100
 
-def pick_a_number():
+from random import randint
 
-  test_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    
-  numero_elegido= random.choice(test_list)
-    
-  return(numero_elegido)
+MODO_FACIL = 10
+
+MODO_DIOS = 5
+
+
+# Funcion para comparar el numero elegido por el usuario comparado con el elegido por la maquina. 
+
+def check_answer(guess, answer): 
+  if guess > answer:
+    print("Muy alto")
+  elif guess < answer:
+    print("Muy bajo")
+  else:
+    print("Acertaste! la respuesta es {answer} ")
+
+## Hacer que la función elija la dificultad 
+
+def set_difficulty():
+  level = input("Elige una dificultad. Teclea 'facil' o 'dificil':")
+  if level == "facil":
+    return  MODO_FACIL
+  else:
+    return  MODO_DIOS
   
-  def ganador():
-    if numero_elegido == numero_jugador:
-      print("Tu ganas")
-    else:
-      print("Tu pierdes")
+          
+      
+
+print("Bienvenido al juego de adivina el numero!")
+print("Podrias adivinar en que numero estoy pensando entre el 1 y el 100?")
+answer = randint(1, 100)
+print(f"Psst, la respuesta correcta es {answer} ")
+
+
+turns = set_difficulty()
+
+print(f"Te quedan {turns} intentos")
+
+# Contar el numero de intentos 
 
 
 
-##pick_a_number()
+# Hacer que el usuario elija el numero
+
+guess = int(input("Di un número: "))
 
 
-
-
-# Include an ASCII art logo.
-# Allow the player to submit a guess for a number between 1 and 100.
-# Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer. 
-# If they got the answer correct, show the actual answer to the player.
-# Track the number of turns remaining.
-# If they run out of turns, provide feedback to the player. 
-# Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
-
+check_answer(guess, answer)
 
