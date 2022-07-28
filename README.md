@@ -10,4 +10,6 @@ Retos:
 1 - Conseguir que las def funcionen de la forma correcta y al tiempo. 
 2 - Hacer que el numero elegido y el que de forma "random" elige la maquina hablen y puedan reaccionar al estar juntos o no.
 3 - Que nos de una respuesta usando el if, else y que se repita mediante el metodo while.
+4 - Renovar los bucles constantemente.
+5 - Crear una funcion de game_over.
 
